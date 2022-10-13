@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# MAC OWNERS
+.DS_Store
+**/.DS_Store
