@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 148743608}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1474659787}
+        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
+        m_MethodName: StartNew
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &148743608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +340,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 250358361}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1474659787}
+        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &250358361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,6 +825,7 @@ GameObject:
   - component: {fileID: 1474659785}
   - component: {fileID: 1474659784}
   - component: {fileID: 1474659783}
+  - component: {fileID: 1474659787}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -892,6 +917,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1474659787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474659782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672867c8225a94c33a509179c302f549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2114460900
 GameObject:
   m_ObjectHideFlags: 0
