@@ -1,30 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
-    //public float horizontalInput;
-    //public float verticalInput;
-    public float speed = 10.0f;
-    int horizMoveDir;
-    int vertMoveDir;
-    Rigidbody rigidBody;
+    public GameObject gameMenu;
 
-    void Awake() {
-        rigidBody = GetComponent<Rigidbody>();
+    void Start() {
+
     }
 
     void Update(){
-        horizMoveDir = (int)Input.GetAxisRaw("Horizontal");
-        //Debug.Log(horizMoveDir);
-        vertMoveDir = (int)Input.GetAxisRaw("Vertical");
-        //Debug.Log(vertMoveDir);
+        if(transform.position.y < 0){
+            GameOver();
+        }
     }
-    void FixedUpdate() {
-        
-        rigidBody.velocity = new Vector3(horizMoveDir, rigidBody.velocity.z, 0);
-        
-        //rigidBody.velocity = new Vector3(vertMoveDir, rigidBody.velocity.z, 0);
+
+    void GameOver(){
+        // Time.timeScale = 0;
+        gameMenu.gameObject.SetActive(true);
     }
 }
