@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     {
         //determine if an enemy should be spawned based on random number in range of difficulty
         //lower difficulty means higher number and greater range
-        if(Random.Range(1,difficulty)==1){
+        if(Random.Range(1,3)==1){
             SpawnEnemy();
         }
     }
@@ -24,12 +24,13 @@ public class Spawner : MonoBehaviour
 
     void SpawnEnemy()
     {
+        Debug.Log("test");
         //determine enemy to be spawned by random number, will load the chosen enemy grabbing the prefab from the resources folder
-            if(Random.Range(0,1)==0){
-                // Instantiate(Resources.Load<GameObject>("Branch"),transform.position,transform.rotation);
+            if(Random.Range(0,2)==0){
+                Instantiate(Resources.Load<GameObject>("Spider"),transform.position,transform.rotation);
             }
             else{
-                // Instantiate(Resources.Load<GameObject>("Branch"),transform.position,transform.rotation);
+                Instantiate(Resources.Load<GameObject>("Snakes"),transform.position,transform.rotation);
             }
             // enemyAlive = true;
             // Instantiate(enemies[Random.Range(0,enemies.Length-1)],transform.position,transform.rotation);

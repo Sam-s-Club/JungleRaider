@@ -17,6 +17,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision col){
+        if (col.gameObject.tag == "enemy") {
+            GameOver();
+        }
+    }
+
     void GameOver(){
         // Time.timeScale = 0;
         gameMenu.gameObject.SetActive(true);
