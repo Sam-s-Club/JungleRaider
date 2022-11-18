@@ -6,9 +6,9 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public GameObject gameMenu;
+    public TextMeshProUGUI text;
 
     void Start() {
-
     }
 
     void Update(){
@@ -21,10 +21,19 @@ public class Player : MonoBehaviour
         if (col.gameObject.tag == "enemy") {
             GameOver();
         }
+        else if(col.gameObject.tag == "victory"){
+            Victory();
+        }
+    }
+
+    void Victory(){
+        text.text = "Victory";
+        gameMenu.gameObject.SetActive(true);
     }
 
     void GameOver(){
-        // Time.timeScale = 0;
+        text.text = "Game Over";
         gameMenu.gameObject.SetActive(true);
+
     }
 }

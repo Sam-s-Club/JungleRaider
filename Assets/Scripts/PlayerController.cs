@@ -28,8 +28,11 @@ public class PlayerController : MonoBehaviour
         
         Debug.Log(Input.GetKeyDown(KeyCode.Space));
    
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+        // transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        // transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+        if(Input.GetKeyDown(KeyCode.A)){
+            transform.Rotate(0,-90,0,Space.World);
+        }
         if (Input.GetKeyDown(KeyCode.Space)) {
             Jump();
         }

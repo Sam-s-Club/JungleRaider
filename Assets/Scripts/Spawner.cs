@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // public GameObject[] enemies;
     public int difficulty;
-    // private bool enemyAlive = false;
     // checking to see if this spawner will spawn an enemy and if so figure out which enemy will be spawned
     void Start()
     {
@@ -17,24 +15,15 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     void SpawnEnemy()
     {
-        Debug.Log("test");
+        Debug.Log(transform.position);
         //determine enemy to be spawned by random number, will load the chosen enemy grabbing the prefab from the resources folder
             if(Random.Range(0,2)==0){
-                Instantiate(Resources.Load<GameObject>("Spider"),transform.position,transform.rotation);
+                Instantiate(Resources.Load<GameObject>("Spider"),transform.position,Quaternion.Euler(180,0,0));
             }
             else{
                 Instantiate(Resources.Load<GameObject>("Snakes"),transform.position,transform.rotation);
             }
-            // enemyAlive = true;
-            // Instantiate(enemies[Random.Range(0,enemies.Length-1)],transform.position,transform.rotation);
     }
-
-    
 }

@@ -18,16 +18,13 @@ public class GameMenu : MonoBehaviour
     }
 
     public void Reload()
-    {
-        // Time.timeScale = 1;   
+    {  
         Debug.Log("Reloading");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-             
     }
 
     public void ExitToMenu()
-    {
-        // Time.timeScale = 1;   
+    {  
         Debug.Log("Exiting");
         SceneManager.LoadScene(0);
     }
