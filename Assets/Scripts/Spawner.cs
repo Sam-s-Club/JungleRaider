@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public int difficulty;
+    
     // checking to see if this spawner will spawn an enemy and if so figure out which enemy will be spawned
     void Start()
     {

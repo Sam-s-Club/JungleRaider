@@ -9,14 +9,17 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI text;
 
     void Start() {
+        
     }
 
+    //checking if the player has fallen off the world
     void Update(){
         if(transform.position.y < 0){
             GameOver();
         }
     }
 
+    //checking collision tags and setting game menu depending on the tag
     void OnCollisionEnter(Collision col){
         if (col.gameObject.tag == "enemy") {
             GameOver();
