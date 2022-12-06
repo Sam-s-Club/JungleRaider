@@ -20,8 +20,8 @@ public class PlayerController2 : MonoBehaviour
     void Update () {
         float translation = Input.GetAxis ("Vertical") * speed;
         float strafe = Input.GetAxis ("Horizontal") * speed;
-        translation *= Time.deltaTime;
-        strafe *= Time.deltaTime;
+        translation *= (Time.deltaTime);
+        strafe *= (Time.deltaTime);
        
         transform.Translate (strafe, 0, translation);
         grounded = Physics.CheckSphere(GroundCheck.transform.position, .2f, LayerMask.GetMask("Ground"));
@@ -36,8 +36,9 @@ public class PlayerController2 : MonoBehaviour
     }
     
     void FixedUpdate(){
-        if (rg.velocity.y < .75f *jumpspeed || !(Input.GetKey (KeyCode.Space))){
-            rg.velocity = Vector3.up * Physics.gravity.y * Time.fixedDeltaTime * gravSpeed;
+        if (rg.velocity.y < .5f *jumpspeed || !(Input.GetKey (KeyCode.Space))){
+            rg.velocity =  Time.fixedDeltaTime * Physics.gravity.y * gravSpeed * Vector3.up *7;
+            //Time.fixedDeltaTime Vector3.up *
         }
     }
 }
