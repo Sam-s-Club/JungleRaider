@@ -1,30 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
-    //public float horizontalInput;
-    //public float verticalInput;
-    public float speed = 10.0f;
-    int horizMoveDir;
-    int vertMoveDir;
-    Rigidbody rigidBody;
+    public GameObject gameMenu;
+    public TextMeshProUGUI text;
 
-    void Awake() {
-        rigidBody = GetComponent<Rigidbody>();
+    void Start() {
+        
     }
 
+    //checking if the player has fallen off the world
     void Update(){
-        horizMoveDir = (int)Input.GetAxisRaw("Horizontal");
-        //Debug.Log(horizMoveDir);
-        vertMoveDir = (int)Input.GetAxisRaw("Vertical");
-        //Debug.Log(vertMoveDir);
+        if(transform.position.y < 0){
+            GameOver();
+        }
     }
-    void FixedUpdate() {
-        
-        rigidBody.velocity = new Vector3(horizMoveDir, rigidBody.velocity.z, 0);
-        
-        //rigidBody.velocity = new Vector3(vertMoveDir, rigidBody.velocity.z, 0);
+
+    //checking collision tags and setting game menu depending on the tag
+    void OnCollisionEnter(Collision col){
+        if (col.gameObject.tag == "enemy") {
+            GameOver();
+        }
+        else if(col.gameObject.tag == "victory"){
+            Victory();
+        }
+    }
+
+    void Victory(){
+        text.text = "Victory";
+        gameMenu.gameObject.SetActive(true);
+    }
+
+    void GameOver(){
+        text.text = "Game Over";
+        gameMenu.gameObject.SetActive(true);
+
     }
 }
