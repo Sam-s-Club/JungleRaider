@@ -18,7 +18,6 @@ public class Spawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Debug.Log(transform.position);
         //determine enemy to be spawned by random number, will load the chosen enemy grabbing the prefab from the resources folder
             if(Random.Range(0,2)==0){
                 Instantiate(Resources.Load<GameObject>("Spider"),transform.position,Quaternion.Euler(180,0,0));
