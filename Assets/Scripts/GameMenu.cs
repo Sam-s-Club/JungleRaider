@@ -10,7 +10,7 @@ public class GameMenu : MonoBehaviour
     public GameObject gameMenu;
     public GameObject settingsMenu;
     public GameObject volumeMenu;
-    
+    public GameObject MainManager;
     public Slider volumeSlider;
     
     [System.Serializable]
@@ -69,7 +69,7 @@ public class GameMenu : MonoBehaviour
     public void SetVolume()
     {
         GameManager.Instance.volume = volumeSlider.value;
-        
+        GameManager.Instance.volumeChanged = true;
         string path = Application.persistentDataPath + "/settings.json";
         Settings data = new Settings();
         data.volume = volumeSlider.value;
@@ -81,6 +81,7 @@ public class GameMenu : MonoBehaviour
     public void Reload()
     {  
         Time.timeScale = 1;
+        AudioListener.pause = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -88,6 +89,7 @@ public class GameMenu : MonoBehaviour
     public void ExitToMenu()
     {  
         Time.timeScale = 1;
+        AudioListener.pause = false;
         SceneManager.LoadScene(0);
     }
 }

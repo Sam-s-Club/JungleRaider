@@ -41,6 +41,11 @@ public class MainManager : MonoBehaviour
             secondCombatSound.Stop();
             thirdCombatSound.Stop();
         }
+        else if(GameManager.Instance.volumeChanged)
+        {
+            GameManager.Instance.volumeChanged = false;
+            SetVolume(GameManager.Instance.volume);
+        }
     }
     
     //set the volume of all audio sources

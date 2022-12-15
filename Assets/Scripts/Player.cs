@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
     {
         Time.timeScale = 0;
         text.text = "Victory";
+        AudioListener.pause = true;
         gameMenu.gameObject.SetActive(true);
         resume.SetActive(false);
         settings.SetActive(false);

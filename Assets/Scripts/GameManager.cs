@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public float volume = 1.0f;
     public Slider volumeSlider;
     public bool gameOver = false;
+    public bool volumeChanged = false;
 
     [System.Serializable]
     public class Settings{
