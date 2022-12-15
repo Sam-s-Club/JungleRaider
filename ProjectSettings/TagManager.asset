@@ -7,6 +7,7 @@ TagManager:
   - ground
   - checkpoint
   - Victory
+  - enemy
   layers:
   - Default
   - TransparentFX
