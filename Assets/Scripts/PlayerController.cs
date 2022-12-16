@@ -50,10 +50,10 @@ public class PlayerController : MonoBehaviour
             rg.velocity = new Vector3(rg.velocity.x, -terminalVelocity, 0);
         }
 
-        // Diminishes the velocity if going up
+        // Diminishes the velocity if going up and use deltaTime to make it framerate independent
         if (rg.velocity.y > 0)
         {
-            rg.velocity = new Vector3(rg.velocity.x, rg.velocity.y * diminishingMultiplier, 0);
+            rg.velocity = new Vector3(rg.velocity.x, rg.velocity.y - (rg.velocity.y * diminishingMultiplier * Time.deltaTime), 0);
         }
 
         // acclerates down if falling enables fast falling
